@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Padding="20" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GoalKeeper.Views.ActivityView">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="200"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="2*"/>
+		</Grid.ColumnDefinitions>
+		<Label Text="Title" HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End"/>
+		<Entry Grid.Column="1" Text="{Binding Title}" HorizontalOptions="FillAndExpand"/>
+
+		<Label Text="Description" Grid.Row="1" HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End"/>
+		<StackLayout Grid.Row="1" Grid.Column="1" BackgroundColor="#888888"  Padding="1">
+			<Editor Text="{Binding Description}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+		</StackLayout>
+		<Button Grid.Row="2" HorizontalOptions="Center" Text="Save"/>
+		<Button Grid.Row="2" Grid.Column="1" HorizontalOptions="Center" Text="Cancel"/>
+	</Grid>
+</ContentPage>

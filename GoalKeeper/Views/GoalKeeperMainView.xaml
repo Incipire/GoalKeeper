@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:local="clr-namespace:GoalKeeper" 
+		x:Class="GoalKeeper.Views.GoalKeeperMainView"
+		xmlns:sync="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+		Title="Activities">
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+			<Label Text="GoalKeeper"/>
+			<sync:SfListView Grid.Row="1" ItemsSource="{Binding}" ItemSize="75">
+				<sync:SfListView.ItemTemplate>
+					<DataTemplate>
+						<Grid Padding="10">
+				          <Grid.RowDefinitions>
+				            <RowDefinition Height="4*" />
+				            <RowDefinition Height="6*" />
+				          </Grid.RowDefinitions>
+				          <Label Text="{Binding Title}" FontAttributes="Bold" TextColor="Teal" FontSize="21" />
+				          <Label Grid.Row="1" Text="{Binding Description}" TextColor="Teal" FontSize="15"/>
+				        </Grid>
+					</DataTemplate>
+				</sync:SfListView.ItemTemplate>
+			</sync:SfListView>
+			<Grid Grid.Row="2" >
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="100"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<Button Grid.Column="1" BackgroundColor="Teal" TextColor="White" FontSize="21" Clicked="AddActivity" Text="+"/>
+			</Grid>
+		</Grid>
+</ContentPage>

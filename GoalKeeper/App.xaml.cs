@@ -1,4 +1,8 @@
-﻿using Xamarin.Forms;
+﻿using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes;
+using Xamarin.Forms;
+using GoalKeeper.Views;
 
 namespace GoalKeeper
 {
@@ -8,12 +12,12 @@ namespace GoalKeeper
 		{
 			InitializeComponent();
 
-			MainPage = new GoalKeeperPage();
+			MainPage = new NavigationPage(new GoalKeeperMainView());
 		}
 
 		protected override void OnStart()
 		{
-			// Handle when your app starts
+			MobileCenter.Start(typeof(Analytics), typeof(Crashes));
 		}
 
 		protected override void OnSleep()
