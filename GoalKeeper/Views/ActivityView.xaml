@@ -18,7 +18,7 @@
 		<StackLayout Grid.Row="1" Grid.Column="1" BackgroundColor="#888888"  Padding="1">
 			<Editor Text="{Binding Description}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
 		</StackLayout>
-		<Button Grid.Row="2" HorizontalOptions="Center" Text="Save"/>
+		<Button Grid.Row="2" HorizontalOptions="Center" Text="Save" Clicked="Handle_Clicked"/>
 		<Button Grid.Row="2" Grid.Column="1" HorizontalOptions="Center" Text="Cancel"/>
 	</Grid>
 </ContentPage>
