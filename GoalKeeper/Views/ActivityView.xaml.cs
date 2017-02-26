@@ -1,4 +1,5 @@
-﻿using GoalKeeper.Models;
+﻿using System;
+using GoalKeeper.Models;
 using Xamarin.Forms;
 
 namespace GoalKeeper.Views
@@ -24,6 +25,16 @@ namespace GoalKeeper.Views
 				activity = value;
 				BindingContext = activity;
 			}
+		}
+
+		void Handle_Clicked(object sender, System.EventArgs e)
+		{
+			if (string.IsNullOrEmpty(activity.Title) || string.IsNullOrEmpty(activity.Description))
+			{
+				return;
+			}
+			ActivityRepository.Instance.Add(activity);
+			Navigation.PopAsync();
 		}
 	}
 }

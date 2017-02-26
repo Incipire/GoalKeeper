@@ -6,22 +6,18 @@ namespace GoalKeeper.Views
 {
 	public partial class GoalKeeperMainView : ContentPage
 	{
-		//TODO: Pull the activity list into persistent storage.
-		List<Activity> activities = new List<Activity>
-			{
-				new Activity{Id=1, Title = "Activity1", Description = "I am the first activity"},
-				new Activity{Id = 2, Title = "Activity2", Description = "I am the second activity"}
-			};
+		private ActivityRepository _activities = ActivityRepository.Instance;
 
 		public GoalKeeperMainView()
 		{
 			InitializeComponent();
-			BindingContext = activities;
+			BindingContext = _activities.GetAll();
 		}
 
 		public async void AddActivity(object sender, System.EventArgs e)
 		{
 			await Navigation.PushAsync(new ActivityView() { Title = "Add an Activity", Activity = new Activity() });
+			BindingContext = _activities.GetAll();
 		}
 	}
 }
