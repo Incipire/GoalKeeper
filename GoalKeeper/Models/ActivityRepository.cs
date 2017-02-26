@@ -22,7 +22,7 @@ namespace GoalKeeper
 			new ObservableCollection<Activity>
 			{
 				new Activity{Id=1, Title = "Activity1", Description = "I am the first activity from the repository"},
-				new Activity{Id = 2, Title = "Activity2", Description = "I am the second activity"}
+				new Activity{Id = 2, Title = "Activity2", Description = "I am the second activity from the repository"}
 			};
 
 		public IEnumerable<Activity> GetAll()
